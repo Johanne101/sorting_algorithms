@@ -19,7 +19,7 @@ void swap(int *xp, int *yp)
 	*yp = temp;
 }
 
-// A function to implement bubble sort
+/* A function to implement bubble sort*/
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
