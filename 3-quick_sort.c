@@ -1,13 +1,10 @@
-/**
+/*
  * Quick Sort Algorithm
  * Date: October, 25, 2021
  * Author: Johanne J. Lopez
  */
 
 #include "sort.h"
-
-int partition(int *array, int low, int high, size_t size);
-void lomuto(int *array, int low, int high, size_t size);
 
 /**
  * quick_sort - sorts array of int. in ascending order using Quick sort algo.
