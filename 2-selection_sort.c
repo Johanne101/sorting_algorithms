@@ -27,7 +27,7 @@ void swap(int *xp, int *yp)
 void selection_sort(int *array, size_t size)
 {
 	/* array to array[size-1] is the array to sort */
-	long unsigned int i,j, jMin;
+	 unsigned long int i, j, jMin;
 
 	/* advance the position through the entire array */
 	/*   (could do i < aLength-1 because single element is also min element) */
@@ -48,7 +48,7 @@ void selection_sort(int *array, size_t size)
 			}
 		}
 
-		if (jMin != i) 
+		if (jMin != i)
 		{
 			swap(&array[i], &array[jMin]);
 			print_array(array, size);
