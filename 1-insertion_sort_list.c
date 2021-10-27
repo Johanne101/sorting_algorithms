@@ -9,7 +9,6 @@
 
 /**
  * swap - Swap 2 nodes at a time.
- * @h: head pointer.
  * @n1: First node to swap.
  * @n2: Second node to be swap by 'n1'.
  */
@@ -42,7 +41,9 @@ void insertion_sort_list(listint_t **list)
 
 	for (; head != NULL; tmp = head->next)
 	{
-		while ( tmp->n > head->n)
+		if (head->next)
+			tmp = head->next;
+		while (tmp->n > head->n)
 		{
 			swap(head, tmp);
 			print_list(*list);
