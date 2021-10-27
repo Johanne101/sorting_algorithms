@@ -7,7 +7,7 @@
 #include "sort.h"
 
 int partition(int *array, int low, int high, size_t size);
-void lomuto(int *array, size_t low, size_t high, size_t size);
+void lomuto(int *array, int low, int high, size_t size);
 
 /**
  * quick_sort - sorts array of int. in ascending order using Quick sort algo.
@@ -44,26 +44,27 @@ int partition(int *array, int low, int high, size_t size)
 
 	for (j = low; j < high; j++)
 	{
-		if (array[j] <= pivot)
+		if (array[j] < pivot)
 		{
-			printf("i: [%i], j: [%i], pivot: [%i]\n", i, j, pivot);
-			if (i != j)
+			/*printf("i: [%i], j: [%i], pivot: [%i]\n", i, j, pivot);*/
+			if (array[i] != array[j])
 			{
-				/* swap*/
+				 /*swap*/
 				tmp = array[j];
 				array[j] = array[i];
 				array[i] = tmp;
-				printf("--------------------\n");
 				print_array(array, size);
 			}
+			i++; /*increment smaller index*/
 		}
-		i++; /*increment smaller index*/
 	}
-/*	tmp = array[i];
-	array[i] = array[high];
-	array[high] = tmp;
-	print_array(array, size);
-*/
+	if (array[i] != array[high])
+	{
+		tmp = array[i];
+		array[i] = array[high];
+		array[high] = tmp;
+		print_array(array, size);
+	}
 	return (i);
 }
 
@@ -76,7 +77,7 @@ int partition(int *array, int low, int high, size_t size)
  *
  */
 /*recursion(arr[], low, high) recursive quick sort function*/
-void lomuto(int *array, size_t low, size_t high, size_t size)
+void lomuto(int *array, int low, int high, size_t size)
 {
 	size_t pi;
 
